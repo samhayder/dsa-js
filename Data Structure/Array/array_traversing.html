@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Traversing</title>
+
+    <script>
+      const arr = [3, 6, 87, 12, 456, 654, 3, 2, 74, 5];
+
+      // Array Traversing
+      for (let i = 0; i < arr.length; i++) {
+        document.write(`Array Index: ${i}: ${arr[i]} <br/>`);
+      }
+
+      const getAccess = () => {
+        let arrIndex = document.querySelector("#arrayAccess").value;
+        let result = document.querySelector(".result");
+
+        if (!arr.length || !arrIndex) {
+          result.innerText = "Sorry! Empty Array";
+        } else if (
+          arr.length > arrIndex && arrIndex >= 0 &&
+          typeof parseInt(arrIndex) === "number"
+        ) {
+          result.innerText = arr[arrIndex];
+          console.log('object');
+        } else {
+          result.innerText = "not match";
+        }
+      };
+      
+    </script>
+  </head>
+  <body>
+   <br>
+    <input type="text" id="arrayAccess" />
+    <button onclick="getAccess()">Get Access</button>
+    <h1 class="result"></h1>
+  </body>
+</html>
