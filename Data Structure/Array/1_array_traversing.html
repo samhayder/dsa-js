@@ -18,20 +18,19 @@
         if (!arr.length || !arrIndex) {
           result.innerText = "Sorry! Empty Array";
         } else if (
-          arr.length > arrIndex && arrIndex >= 0 &&
+          arr.length > arrIndex &&
+          arrIndex >= 0 &&
           typeof parseInt(arrIndex) === "number"
         ) {
           result.innerText = arr[arrIndex];
-          console.log('object');
         } else {
           result.innerText = "not match";
         }
       };
-      
     </script>
   </head>
   <body>
-   <br>
+    <br />
     <input type="text" id="arrayAccess" />
     <button onclick="getAccess()">Get Access</button>
     <h1 class="result"></h1>

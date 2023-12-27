@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Insert</title>
+
+    <script>
+      // Understand issue and solution with whiteboard
+      // Make array, define the position
+      // Use loop to insert new element
+      // Insert element with text input and button
+      // Insert element with by default function
+
+      // insert array
+      let arr = [3, 4, 6, 1, 9, 11];
+      /* let newEl = 8;
+      let position = 2;
+
+      for (let i = arr.length - 1; i >= 0; i--) {
+        if (i >= position) {
+          arr[i + 1] = arr[i];
+
+          if (i === position) {
+            arr[i] = newEl;
+          }
+        }
+      } */
+
+      const spliceArr = () => {
+        let position = +document.querySelector(".position").value;
+        let element = +document.querySelector(".element").value;
+
+        let result = document.querySelector(".result");
+
+        if (!position || !element) {
+          result.innerText = "Please fill all input field with numeric number";
+        } else if (position > arr.length) {
+         result.innerText = `This position dose not exist. You can choose Position length: ${arr.length}`
+        } else {
+         document.querySelector('.oldArr').innerText = `Old Array: ${arr}`;
+
+          for (let i = arr.length - 1; i >= 0; i--) {
+            if (i >= position) {
+              arr[i + 1] = arr[i];
+
+              if (i === position) {
+                arr[i] = element;
+              }
+            }
+          }
+          result.innerText = `New Array: ${arr}`;
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" name="" class="position" placeholder="Type Position" />
+    <input type="text" name="" class="element" placeholder="Type Element" />
+    <button onclick="spliceArr()">Splice</button>
+    <br />
+
+    <p class="oldArr"></p>
+    <h3 class="result"></h3>
+  </body>
+</html>

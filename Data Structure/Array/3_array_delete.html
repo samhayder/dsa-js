@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Delete</title>
+
+    <script>
+      // Make array, define the position
+      // Use Loop to delete element
+      // Delete element with text input and button
+
+      let arr = [10, 20, 30, 40, 50, 60];
+      let arrPosition = 2;
+
+      for (let i = arrPosition; i < arr.length - 1; i++) {
+        arr[i] = arr[i + 1];
+      }
+
+      arr.length = arr.length - 1;
+
+      const getDelete = () => {
+        let data = [3, 25, 89, 41, 203, 78, 15, 97];
+        let position = +document.querySelector(".position").value;
+        let result = document.querySelector(".result");
+
+        for (let i = position; i < data.length - 1; i++) {
+          data[i] = data[i + 1];
+        }
+        data.length = data.length - 1;
+
+        result.innerText = data;
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" class="position" placeholder="Type Position" />
+    <button onclick="getDelete()">Delete</button>
+
+    <br />
+    <h3 class="result"></h3>
+  </body>
+</html>

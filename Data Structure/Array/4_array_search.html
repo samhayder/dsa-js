@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Search</title>
+
+    <script>
+      // Make array
+      // Use Loop to search element
+      // Search element with text input and button
+
+      let arr = [1, 2, 3, 4, 5, 6];
+      let searchEl = 5;
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === searchEl) {
+          console.log(i);
+        }
+      }
+
+      const searchElem = () => {
+        let search = +document.querySelector(".search").value;
+        let result = document.querySelector(".result");
+
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] == search) {
+            result.innerText = `${search} number include index is: ${i}`;
+            break;
+          } else {
+            result.innerText = `${search} number not found...`;
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" class="search" placeholder="Search Element" />
+    <button onclick="searchElem()">Search Element</button>
+
+    <h4 class="result"></h4>
+  </body>
+</html>
