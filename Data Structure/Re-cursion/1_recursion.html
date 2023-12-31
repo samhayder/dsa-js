@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Recursion</title>
+
+    <script>
+      const getRecursion = (n) => {
+        if (n == 0) {
+          return (n = 1);
+        }
+
+        return n * getRecursion(n - 1);
+      };
+
+      let item = 5;
+
+      console.log(getRecursion(item));
+
+      let arr = [2,7,8];
+      let target = 9;
+
+      for (let i = 0; i < arr.length; i++) {
+        let sum = arr[i] + arr[i + 1];
+
+        if (sum === target) {
+          console.log(sum);
+        }
+      }
+
+    </script>
+  </head>
+  <body></body>
+</html>
